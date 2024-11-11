@@ -80,8 +80,7 @@ ul {
 }
 
 li {
-  padding: 20px;
-  margin: 10px;
+  padding-top: 20px;
   width: 45%;
   font-family: arial;
   letter-spacing: 1px;
@@ -92,8 +91,4 @@ li {
 p {
   padding: 20px;
   font-family: arial;
-}
-
-.error {
-  color: #ff0000;
 }

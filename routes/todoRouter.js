@@ -9,6 +9,6 @@ const todoRouter = Router();
 
 todoRouter.get("/", getAllTodo);
 todoRouter.post("/", createNewTodo);
-todoRouter.delete("/:index", deleteTodo);
+todoRouter.delete("/:todoId", deleteTodo);
 
 module.exports = todoRouter;
