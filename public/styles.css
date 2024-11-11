@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
 body {
   font-family: tahoma;
   color: #989898;
@@ -5,61 +10,90 @@ body {
 }
 
 #todo-table {
-  position: relative;
   background: #090d13;
-  margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
   height: 100vh;
-  border: 1px solid red;
 }
 
-#todo-table form:after {
-  margin: 0;
-  content: "";
-  display: block;
-  clear: both;
+form {
+  display: flex;
+  gap: 10px;
 }
 
-input[type="text"] {
-  width: 70%;
+form input[type="text"] {
+  flex-grow: 10;
   padding: 20px;
   background: #181c22;
   border: 0;
-  float: left;
   font-size: 20px;
   color: #989898;
 }
 
-button {
+form button {
   padding: 20px;
-  width: 30%;
-  float: left;
-  background: #23282e;
+  flex-grow: 1;
+  background: #0000ff;
   border: 0;
-  box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
+}
+
+button:hover {
+  background: #0000ffab;
+}
+
+.todo {
+  padding: 0;
+  margin: 0;
+}
+
+li p {
+  flex-grow: 4;
+  padding: 20px;
+  border: 0;
+  font-size: 20px;
+  color: #989898;
+}
+
+li button {
+  padding: 0;
+  background-color: unset;
+  flex-grow: 1;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+li button:hover {
+  color: #ff0000;
+  background: unset;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100vh - 200px);
 }
 
 li {
-  width: 100%;
   padding: 20px;
-  box-sizing: border-box;
+  margin: 10px;
+  width: 45%;
   font-family: arial;
   font-size: 20px;
-  cursor: pointer;
   letter-spacing: 1px;
+  display: flex;
+  gap: 10px;
 }
 
-li:hover {
-  text-decoration: line-through;
-  background: rgba(0, 0, 0, 0.2);
+p {
+  padding: 20px;
+  font-family: arial;
+  font-size: 20px;
 }

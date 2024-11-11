@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const { urlencoded } = require("express");
 const todoRouter = require("./routes/todoRouter");
-const path = require("path");
 
 const app = express();
 

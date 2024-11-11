@@ -6,19 +6,35 @@
     <title>Todo List</title>
     <link rel="stylesheet" href="styles.css" type="text/css" />
     <link rel="shortcut icon" href="JD.ico" type="image/x-icon" />
+    <script src="scripts/index.js"></script>
   </head>
   <body>
     <div id="todo-table">
       <h1>My Todo List</h1>
       <form action="" method="post">
-        <input type="text" name="item" placeholder="Add new item..." required />
+        <input
+          type="text"
+          name="item"
+          placeholder="Add new item..."
+          required
+          autocomplete="off"
+        />
         <button type="submit">Add Item</button>
       </form>
+      <% if(todos.length > 0) { %>
       <ul>
-        <li>Item1</li>
-        <li>Item2</li>
-        <li>Item3</li>
+        <% todos.forEach((todo, index) => { %>
+        <li>
+          <p class="todo"><%= todo.item %></p>
+          <button type="submit" data-id="<%= index %>" class="delete-todo">
+            X
+          </button>
+        </li>
+        <% }); %>
       </ul>
+      <% } else { %>
+      <p>No todos found</p>
+      <% } %>
     </div>
   </body>
 </html>

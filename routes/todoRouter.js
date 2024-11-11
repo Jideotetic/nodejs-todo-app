@@ -1,10 +1,14 @@
 const { Router } = require("express");
-const { getAllTodo } = require("../controllers/todoController");
+const {
+  getAllTodo,
+  createNewTodo,
+  deleteTodo,
+} = require("../controllers/todoController");
 
 const todoRouter = Router();
 
 todoRouter.get("/", getAllTodo);
-todoRouter.post("/", (req, res) => {});
-todoRouter.delete("/", (req, res) => {});
+todoRouter.post("/", createNewTodo);
+todoRouter.delete("/:index", deleteTodo);
 
 module.exports = todoRouter;
