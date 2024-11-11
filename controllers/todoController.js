@@ -6,7 +6,7 @@ async function getAllTodo(req, res) {
 
 async function createNewTodo(req, res) {
   const newTodo = req.body;
-  todos.push(newTodo);
+  todos.unshift(newTodo);
   res.redirect("/");
 }
 
