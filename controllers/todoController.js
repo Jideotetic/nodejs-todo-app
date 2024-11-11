@@ -1,12 +1,26 @@
 const todos = [];
 
 async function getAllTodo(req, res) {
-  res.render("todo", { todos });
+  res.render("todo", { todos, error: undefined });
 }
 
 async function createNewTodo(req, res) {
-  todos.push(req.body);
-  res.redirect("/");
+  try {
+    if (!req.body.item) {
+      return res.status(400).render("todo", {
+        todos,
+        error: "Item title is required",
+      });
+    }
+
+    const newTodo = req.body;
+    todos.push(newTodo);
+
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Something went wrong");
+  }
 }
 
 async function deleteTodo(req, res) {

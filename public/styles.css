@@ -7,6 +7,7 @@ body {
   font-family: tahoma;
   color: #989898;
   margin: 0;
+  font-size: 16px;
 }
 
 #todo-table {
@@ -25,7 +26,6 @@ form input[type="text"] {
   padding: 20px;
   background: #181c22;
   border: 0;
-  font-size: 20px;
   color: #989898;
 }
 
@@ -36,7 +36,6 @@ form button {
   border: 0;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
 }
 
 button:hover {
@@ -52,7 +51,6 @@ li p {
   flex-grow: 4;
   padding: 20px;
   border: 0;
-  font-size: 20px;
   color: #989898;
 }
 
@@ -86,7 +84,6 @@ li {
   margin: 10px;
   width: 45%;
   font-family: arial;
-  font-size: 20px;
   letter-spacing: 1px;
   display: flex;
   gap: 10px;
@@ -95,5 +92,8 @@ li {
 p {
   padding: 20px;
   font-family: arial;
-  font-size: 20px;
+}
+
+.error {
+  color: #ff0000;
 }
