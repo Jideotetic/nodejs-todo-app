@@ -1,9 +1,6 @@
 async function getAllTodo(req, res) {
   if (!req.session.todos) {
-    console.log(req.session);
     req.session.todos = [];
-  } else {
-    console.log(req.session);
   }
   const todos = req.session.todos;
   res.render("todo", { todos, error: undefined });
