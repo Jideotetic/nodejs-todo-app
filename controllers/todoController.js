@@ -1,18 +1,30 @@
-const todos = [];
-
 async function getAllTodo(req, res) {
+  if (!req.session.todos) {
+    console.log(req.session);
+    req.session.todos = [];
+  } else {
+    console.log(req.session);
+  }
+  const todos = req.session.todos;
   res.render("todo", { todos, error: undefined });
 }
 
 async function createNewTodo(req, res) {
   const newTodo = req.body;
-  todos.unshift(newTodo);
+  if (!req.session.todos) {
+    req.session.todos = [];
+  }
+  req.session.todos.unshift(newTodo);
   res.redirect("/");
 }
 
 async function deleteTodo(req, res) {
   try {
     const todoId = req.params.todoId;
+    if (!req.session.todos) {
+      req.session.todos = [];
+    }
+    const todos = req.session.todos;
     if (todoId >= 0 && todoId < todos.length) {
       todos.splice(todoId, 1);
       return res.status(200).json({ msg: "Todo deleted successfully" });
